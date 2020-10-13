@@ -19,13 +19,16 @@ private:
 	// See more at https://docs.unrealengine.com/en-US/API/Runtime/Engine/GameFramework/USpringArmComponent/index.html
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent *SpringArm;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UCameraComponent *Camera;
 
 	FVector MoveDirection;
 	FQuat RotationDirection;
 
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float MoveSpeed = 100.0f;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float RotateSpeed = 100.0f;
 
 	void CalculateMoveInput(float Value);
