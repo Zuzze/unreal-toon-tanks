@@ -1,0 +1,8 @@
+{
+	"files.exclude": {
+		"/Users/zuzze/Downloads/ToonTanksProjectSetup_4.22/ToonTanks/.vscode": true,
+		"/Users/zuzze/Downloads/ToonTanksProjectSetup_4.22/ToonTanks/Content": true,
+		"/Users/zuzze/Downloads/ToonTanksProjectSetup_4.22/ToonTanks/Intermediate": true,
+		"/Users/zuzze/Downloads/ToonTanksProjectSetup_4.22/ToonTanks/Saved": true
+	}
+}
