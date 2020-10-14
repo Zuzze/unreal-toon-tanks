@@ -27,3 +27,28 @@ APawnBase::APawnBase()
 	ProjectileSpawnPoint->SetupAttachment(TurretMesh);
 }
 
+// Update TurretMesh rotation to face target
+void APawnBase::RotateTurret(FVector LookAtTarget)
+{
+	// Only x and y rotation are taken into account, Z is a constant of the turret height
+	FVector LookAtTargetCleaned = FVector(LookAtTarget.X, LookAtTarget.Y, TurretMesh->GetComponentLocation().Z);
+
+	//Start x, y, z of turret
+	FVector StartLocation = TurretMesh->GetComponentLocation();
+
+	// change of start and target = targetV - startV
+	FRotator TurretRotation = FVector(LookAtTargetCleaned - StartLocation).Rotation();
+
+	// set rotation to actual mesh
+	TurretMesh->SetWorldRotation(TurretRotation);
+}
+
+void APawnBase::Fire()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Firing"))
+}
+
+void APawnBase::HandleDestruction()
+{
+	// play death effects particle, sound and camera shake
+}
