@@ -19,6 +19,7 @@ void UHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
+	// Initialization outside contructor! (think componentDidMount)
 	Health = DefaultHealth;
 	GameModeRef = Cast<AToonTanksGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
 
@@ -36,6 +37,7 @@ void UHealthComponent::TakeDamage(AActor *DamagedActor, float Damage, const UDam
 
 	// set boundaries so that health is not out of min/max bounds
 	Health = FMath::Clamp(Health - Damage, 0.0f, DefaultHealth);
+	UE_LOG(LogTemp, Warning, TEXT("Health: %f"), Health);
 
 	if (Health <= 0)
 	{
