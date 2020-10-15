@@ -9,6 +9,7 @@ void AToonTanksGameModeBase::BeginPlay()
 
 void AToonTanksGameModeBase::ActorDied(AActor *DeadActor)
 {
+    UE_LOG(LogTemp, Warning, TEXT("A Pawn died"));
 }
 
 void AToonTanksGameModeBase::HandleGameStart()

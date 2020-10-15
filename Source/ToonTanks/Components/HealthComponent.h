@@ -18,7 +18,7 @@ private:
 	float DefaultHealth = 100.0f;
 	float Health = 0.0f;
 
-	AToonTanksGameModeBase *GameModeRef *;
+	AToonTanksGameModeBase *GameModeRef;
 
 public:
 	// Sets default values for this component's properties
@@ -29,9 +29,6 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
-
 	UFUNCTION()
-	void TakeDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser);
+	void TakeDamage(AActor *DamagedActor, float Damage, const UDamageType *DamageType, AController *InstigatedBy, AActor *DamageCauser);
 };
