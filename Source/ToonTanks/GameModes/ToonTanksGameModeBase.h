@@ -14,7 +14,7 @@ class TOONTANKS_API AToonTanksGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 
 private:
-	APawnTank* PlayerTank;
+	APawnTank *PlayerTank;
 	int32 TargetTurrets = 0;
 
 	int32 GetTargetTurretCount();
@@ -25,9 +25,15 @@ public:
 	void ActorDied(AActor *DeadActor);
 
 protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Game Loop")
+	int32 StartDelay = 3;
+
 	virtual void BeginPlay() override;
+
+	// UFUNCTION(BlueprintImplementableEvent) takes the logic from Blueprint directly
 	UFUNCTION(BlueprintImplementableEvent)
 	void GameStart();
+
 	UFUNCTION(BlueprintImplementableEvent)
 	void GameOver(bool PlayerWon);
 };
