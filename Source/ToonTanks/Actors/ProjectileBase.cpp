@@ -38,11 +38,12 @@ void AProjectileBase::OnHit(UPrimitiveComponent *HitComp, AActor *OtherActor, UP
 		return;
 	}
 
+	// apply damage only if the hit actor is not player itself
 	if (OtherActor && OtherActor != this && OtherActor != MyOwner)
 	{
 		UGameplayStatics::ApplyDamage(OtherActor, Damage, MyOwner->GetInstigatorController(), this, DamageType);
+		UGameplayStatics::SpawnEmitterAtLocation(this, HitParticle, GetActorLocation());
 	}
-
 	// destroy missiles when they hit something so they won't float around
 	Destroy();
 }
