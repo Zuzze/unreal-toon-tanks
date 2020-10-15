@@ -34,6 +34,10 @@ private:
 	float Damage = 50;
 	UPROPERTY(EditAnywhere, Category = "Effects")
 	UParticleSystem *HitParticle;
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	USoundBase *HitSound;
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	USoundBase *LaunchSound;
 
 	// Functions
 	UFUNCTION()
